@@ -1,6 +1,6 @@
-package com.lucien.tacocloud.data;
+package tacos.data;
 
-import com.lucien.tacocloud.Ingredient;
+import tacos.Ingredient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
@@ -24,7 +24,7 @@ public class JdbcIngredientRepository implements IngredientRepository {
     }
 
     @Override
-    public Ingredient findOne(String id) {
+    public Ingredient findById(String id) {
         return jdbc.queryForObject("select id, name, type from Ingredient where id=?", this::mapRowToIngredient, id);
     }
 

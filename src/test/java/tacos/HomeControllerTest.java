@@ -1,4 +1,4 @@
-package com.lucien.tacocloud;
+package tacos;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
