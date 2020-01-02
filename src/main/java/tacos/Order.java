@@ -36,20 +36,23 @@ public class Order implements Serializable {
     @NotBlank(message = "State is required")
     private String state;
 
-    @NotBlank(message = "Zip code is required")
-    private String zip;
+//    @NotBlank(message = "Zip code is required")
+//    private String zip;
 
-    @CreditCardNumber(message = "Not a valid credit card number")
-    private String ccNumber;
+//    @CreditCardNumber(message = "Not a valid credit card number")
+//    private String ccNumber;
 
     @Pattern(regexp = "^(0[1-9]|1[0-2])([\\/])([1-9][0-9])$", message = "Must be formatted MM/YY")
     private String ccExpiration;
 
-    @Digits(integer = 3, fraction = 0, message = "Invalid CVV")
-    private String ccCVV;
+//    @Digits(integer = 3, fraction = 0, message = "Invalid CVV")
+//    private String ccCVV;
 
     @ManyToMany(targetEntity = Taco.class)
     private List<Taco> tacos = new ArrayList<>();
+
+    @ManyToOne
+    private User user;
 
     public void addDesign(Taco design) {
         this.tacos.add(design);
